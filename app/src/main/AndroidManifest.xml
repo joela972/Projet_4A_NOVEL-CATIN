@@ -3,6 +3,7 @@
     package="com.example.projet4anovel_catin">
 
     <application
+        android:name=".injection.JoelaApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

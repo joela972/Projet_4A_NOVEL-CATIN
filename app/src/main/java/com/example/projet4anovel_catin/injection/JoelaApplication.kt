@@ -12,7 +12,7 @@ class JoelaApplication : Application() {
             // Android context
             androidContext(this@JoelaApplication)
             // modules
-            modules(presentationModule)
+            modules(presentationModule, domainModule, dataModule)
         }
     }
 }

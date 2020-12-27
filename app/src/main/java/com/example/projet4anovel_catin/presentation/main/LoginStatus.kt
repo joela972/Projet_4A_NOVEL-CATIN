@@ -1,8 +1,8 @@
 package com.example.projet4anovel_catin.presentation.main
 
-import android.provider.ContactsContract
+sealed class LoginStatus
 
-sealed class LoginStatusSealed
+data class LoginSuccess(val email: String) : LoginStatus()
+object LoginError : LoginStatus()
 
-data class LoginSuccess(val email: String) : LoginStatusSealed()
-object LoginError : LoginStatusSealed()
+

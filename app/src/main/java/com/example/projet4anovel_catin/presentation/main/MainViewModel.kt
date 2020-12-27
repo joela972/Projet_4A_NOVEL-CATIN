@@ -7,8 +7,8 @@ import com.example.projet4anovel_catin.domain.entity.User
 import com.example.projet4anovel_catin.domain.usecase.CreateUserUseCase
 import com.example.projet4anovel_catin.domain.usecase.GetUserUseCase
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.*
-
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 
 class MainViewModel(
@@ -23,7 +23,7 @@ class MainViewModel(
             val user = getUserUseCase.invoke(emailUser)
             val loginStatus = if(user != null){
                 LoginSuccess(user.email)
-            }else{
+            } else {
                 LoginError
             }
             withContext(Dispatchers.Main){

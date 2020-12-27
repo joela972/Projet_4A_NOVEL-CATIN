@@ -7,7 +7,7 @@ class CreateUserUseCase(
     private val userRepository: UserRepository
 ) {
     suspend fun invoke(user : User){
-    return userRepository.createUser(user)
+        userRepository.createUser(user)
     }
 }
 

@@ -1,4 +1,4 @@
-package com.example.projet4anovel_catin.data.local.models
+ package com.example.projet4anovel_catin.data.local.models
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -7,18 +7,21 @@ import com.example.projet4anovel_catin.domain.entity.User
 
 @Entity
 data class UserLocal(
-    @ColumnInfo(name = "email") val email: String
+    @ColumnInfo(name = "email") val email: String,
+    @ColumnInfo(name ="password") val password : String
 ){
     @PrimaryKey (autoGenerate = true) var uid: Int? = null
 }
 fun User.toData() : UserLocal {
     return UserLocal(
-        email = email
+        email = email,
+        password = password
     )
 }
 
 fun UserLocal.toEntity() : User {
     return User(
-        email = email
+        email = email,
+        password = password
     )
 }

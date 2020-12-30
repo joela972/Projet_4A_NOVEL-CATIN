@@ -22,13 +22,31 @@ class MainViewModel(
         viewModelScope.launch(Dispatchers.IO) {
             val user = getUserUseCase.invoke(emailUser)
             val loginStatus = if(user != null){
-                LoginSuccess(user.email)
+                LoginSuccess(user.email, user.password)
+                } else {
+                    LoginError
+                }
+            withContext(Dispatchers.Main){
+                loginLiveData.value = loginStatus
+            }
+        }
+    }
+
+    fun onClickedCreate(emailUser: String, password: String){
+        viewModelScope.launch(Dispatchers.IO) {
+            val user =  getUserUseCase.invoke(emailUser)
+            val loginStatus = if(user != null){
+                LoginOK
             } else {
-                LoginError
+                LoginCreate
+            }
+            if(loginStatus == LoginCreate){
+                createUserUseCase.invoke(User(emailUser, password))
             }
             withContext(Dispatchers.Main){
                 loginLiveData.value = loginStatus
             }
         }
     }
+
 }

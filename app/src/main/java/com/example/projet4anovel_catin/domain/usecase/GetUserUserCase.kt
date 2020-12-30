@@ -9,4 +9,7 @@ class GetUserUseCase(
     suspend fun invoke(email: String) :User? {
         return userRepository.getUser(email)
     }
+    suspend fun invoke(email: String, password : String) :User? {
+        return userRepository.getMailPassword(email, password)
+    }
 }

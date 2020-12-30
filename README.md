@@ -19,4 +19,14 @@ Lors de la connection une second page s'ouvre avec liste de USER
 
 # Présentation image 
 
+# Page d'accueil
 
+![alt tag](https://github.com/joela972/Projet_4A_NOVEL-CATIN/blob/master/page_accueil.jpg)
+
+# Boîte de dialoge
+
+![alt tag](https://github.com/joela972/Projet_4A_NOVEL-CATIN/blob/master/Dialog_login.jpg)
+
+# PopUp 
+
+![alt tag](https://github.com/joela972/Projet_4A_NOVEL-CATIN/blob/master/pop_up.jpg)
